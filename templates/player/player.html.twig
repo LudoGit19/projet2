@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Player{% endblock %}
+
+
+{% block monTitre %}
+Listes des joueurs
+{% endblock %}
+
+{% block body %}
+{# <a href="{{path("playersParNom", {"lname": "c"})}}">par Nom de famille</a> #}
+  <div class="row m-4"> 
+    {% for player in players %}            
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card border-success mb-3 max-auto" style="max-width:40rem;">
+            <div class="card-header text-center">
+              <img src="{{asset('images/player/'~ player.image) }}" class="perso_imgPlayer">
+            </div>
+            <div class="card-body">
+              <h3 class="card-tittle text-center pb-2 mx-2 border-bottom border-success">{{ player.fname }}</h3>
+            <p class="card-text">
+            
+              <table class="table text-center table-hover">
+                    <tbody>                                
+                      <tr class="table-success">
+                          <th scope="row">Nom</th>
+                          <td>{{player.lname}}</td>                        
+                      </tr>
+                      <tr class="table">
+                          <th scope="row">Email</th>
+                          <td>{{player.mail}}</td>                       
+                      </tr>
+                      <tr class="table-success">
+                          <th scope="row">Tel</th>
+                          <td>{{player.phone}}</td>
+                    </tbody>
+              </table>                              
+            </p>
+            </div>    
+        </div>
+      </div>              
+    {% endfor %}
+  </div>
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}adminPlayer{% endblock %}
+
+
+{% block monTitre %}
+Page d'administration
+{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('success') %}
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button> 
+        {{message}}
+    </div>    
+{% endfor %}
+
+<a class="btn btn-warning" href="{{path('admin_player_creation')}}">Ajouter</a>
+
+<table class="table">
+    <tr class="table-primary">
+        <td>Photo</td>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Email</td>
+        <td>Téléphone</td>
+        <td>Actions</td>
+    </tr>
+    {% for player in players %}
+        <tr>
+            <td><img src="{{asset('images/player/'~ player.image) }}" class="perso_imgPlayer"></td>
+            <td>{{ player.lname }}</td>
+            <td>{{ player.fname }}</td>
+            <td>{{ player.mail }}</td>
+            <td>{{ player.phone }}</td>
+            <td>
+                <a class="btn btn-secondary" href="{{path('admin_player_modification', {'id' : player.id})}}">Modifier</a>
+                <form method="POST" style="display:inline-block" action="{{ path('admin_player_suppression', {'id' : player.id}) }}" onsubmit= "return('Confirmer la suppression ?')"> 
+                
+                    <input type="hidden" name="_method" value="delete"> 
+                    <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ player.id)}}"> 
+                    <input type="submit" class="btn btn-danger" value="supprimer"> 
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
