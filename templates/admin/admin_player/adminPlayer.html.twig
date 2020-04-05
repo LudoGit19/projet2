@@ -9,7 +9,7 @@ Page d'administration
 
 {% block body %}
 {% for message in app.flashes('success') %}
-    <div class="alert alert-dismissible alert-success">
+    <div class="alert alert-dismissible alert-info">
         <button type="button" class="close" data-dismiss="alert">&times;</button> 
         {{message}}
     </div>    
@@ -20,6 +20,7 @@ Page d'administration
 <table class="table">
     <tr class="table-primary">
         <td>Photo</td>
+        <td>Catégorie</td>
         <td>Nom</td>
         <td>Prénom</td>
         <td>Email</td>
@@ -29,7 +30,8 @@ Page d'administration
     {% for player in players %}
         <tr>
             <td><img src="{{asset('images/player/'~ player.image) }}" class="perso_imgPlayer"></td>
-            <td>{{ player.lname }}</td>
+            <td><strong>{{ player.type.label }}</strong></td>
+            <td><strong>{{ player.lname }}</strong></td>
             <td>{{ player.fname }}</td>
             <td>{{ player.mail }}</td>
             <td>{{ player.phone }}</td>

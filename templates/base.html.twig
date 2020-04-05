@@ -3,73 +3,156 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}BeForGame.com{% endblock %}</title>
-        {# // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        // <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
-        // <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> #}
-
-        {# bootstrap #}
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-        {# google fonts #}
-        <link href="https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
         <link rel="stylesheet" href="{{asset('css/main1.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Wallpoet&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Monofett|Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Monofett|Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {# version cvBootstrapLudo #}
-        <nav class="navbar navbar-expand-lg navbar-light bg-success">
-            <div class="container">
-                
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>            
-                    <a class="navbar-brand" href="#">BeForGame</a>
-                      
-                      {# <a class="navbar-brand" href="#"><img src="images/player/logoMini10.png" alt="erreur"/></a> #}
-                      
-                      <div class="collapse navbar-collapse" id="myNavbar">
-                          <ul class="navbar-nav mr-auto">
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Effectifs
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{path("players")}}">Team</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{path("admin_player")}}">administration</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Recherche">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>    
-           
-        </nav>
 
-        <!-- menu version Udemy -->
-{# 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #460491; border-radius: 0px 0px 45px 0px;">
+        <!-- Brand -->
+        <a class="navbar-brand" style="color: rgb(42, 124, 134);" href="#">BeForGame</a>
+        <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <!-- <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li> -->
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li> -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ma team
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{path("players")}}">Effectifs</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{{path("admin_player")}}">administration</a>
+                    </div>
+                  </li>
+                      <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                  <li class="nav-item dropdown">    
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Convocations
+                        </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{path("types")}}">Catégories</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">administration</a>
+                    </div>      
+                  </li>
+                      <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                    
+                
+                  <!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                  </li> -->
+              </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+
+       
+      
+               
+        
+      </nav>
+      <br>
+      
+      
+      
+      <!-- <section><img src="{#{{asset('images/logo/technoCoffee.jpeg')}}#}"></section> -->
+
+        <!-- menu version Bootstrap 4 Navbar with Icon Top"-->
+
+        {# <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> #}
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark"> -->
+  {# <a class="navbar-brand" href="#">Be For Game</a> #}
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <i class="fa fa-home"></i>
+          BeForGame
+       
+          </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ma Team
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{#{{path("players")}}#}">Effectifs</a>
+          
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{#{{path("admin_player")}}#}">administration</a> 
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Convocations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{#{{path("types")}}#}">Catégorie</a>
+          
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Administration</a>
+        </div>
+      </li>
+    </ul>
+   
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav> -->
+
+
+        <!--/.Navbar-->
+
+
+
+        {# <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand" href="#">BeForGame</a> 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">BeForGame</a>  #}
-{#             
+            
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Team
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">administration</a>
-                        </div>
+                        <div class="dropdown-menu: overflow" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{path("players")}}">Team</a>
+                            {# <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{path("admin_player")}}">administration</a> #}
+                        {# </div>
                     </li>
                 </ul>
             </div>
@@ -79,6 +162,116 @@
             </form>
         </nav>  #}
 
+
+
+        {# Version w3schools navbar with dropdown #}
+        {# <nav class="navbar"><nav class="navbar navbar-expand-sm bg-dark navbar-dark">    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> BeFor.Game</a>
+            <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+            <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Services
+                </a>
+                <!-- bloc menu déroulant -->
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Service 1</a>
+                  <a class="dropdown-item" href="#">Autre service action</a>
+                  <a class="dropdown-item" href="#">Dernier service</a>
+                </div>
+        
+        </nav> #}
+
+          
+{# 
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="active" href="#"><i class="fa fa-fw fa-home"></i> BeFor.Game</a>
+          
+            <!-- Links -->
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">BeforGame</a>
+                </li>
+          
+              <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Ma team
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{path("players")}}">Team</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{path("admin_player")}}">administration</a>
+                    </div>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Convocations
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{path("types")}}">Catégorie</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">administration</a>
+                    </div>
+                </li>
+            </ul>
+        </nav> #}
+
+
+
+
+        {# version cvBootstrapLudo #}
+        {# <nav class="navbar navbar-expand-lg bg-dark navbar-dark">            
+           
+                
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>            
+                    <a class="navbar-mainTitle" href="#">BeForGame</a>
+                      
+                      <a class="navbar-brand" href="#"><img src="images/player/logoMini10.png" alt="erreur"/></a>
+                      
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Ma Team
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{path("players")}}">Team</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{path("admin_player")}}">administration</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Convocations
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{path("types")}}">Catégorie</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">administration</a>
+                                </div>
+                            </li>
+                        </ul> 
+                    </div>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Recherche">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form> 
+              
+           
+        </nav>  #}
+
+        <!-- menu version Udemy -->
+
+ 
+        
 
         <h1 class="p-2 m-2 text-darck">{% block monTitre %}{% endblock %}</h1>
         {% block body %}{% endblock %}

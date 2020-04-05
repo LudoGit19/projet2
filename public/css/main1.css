@@ -1,69 +1,55 @@
 /* GENERAL */
 
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  
+}
+
+.navbar-brand{
+  font-family: 'Monofett', cursive;
+  font-size: 5em;
+  color:white;
+  letter-spacing: 2px;
+  
+}
+
 body{
     font-family: 'Lato', sans-serif;
     position: relative;
-    background-color: rgb(168, 245, 132);
+    background-color: rgb(160, 160, 160); 
 }
 
 h1, h2, h3, h4, h5, h6{
     font-weight: bold;
+    font-family: 'Cabin Sketch', cursive;
 }
 
 img{
     max-width: 100%;
     height: auto;
 }
-ul, ol{
+ ul, ol{
     list-style: none;
+} 
+
+
+
+ #navbarDropdown {
+  font-size: 20px;
+  padding: 20px;
+  font-family: 'Bungee Inline', cursive;
+  color: rgb(42, 124, 134);
 }
 
-.navbar{
-    background: #000000;
-    font-size: 16px;
-   
-    letter-spacing: 4px;
-    /* text-transform: uppercase; */
-    font-weight: bold;
-    font-family: 'Bungee Inline', cursive;
+.dropdown-item{
+  color: rgb(42, 124, 134);
 }
 
-/* MENU */
+.dropdown-divider{
+  color: rgb(42, 124, 134);
+} 
 
-.navbar{
-    background: #2a2883ea;
-    font-size: 12px;
-    letter-spacing: 4px;
-    text-transform: capitalize;
-    font-weight: bold;
-}
-
-.navbar .navbar-nav{
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-}
-.navbar .navbar-collapse{
-    text-align: center;
-}
-.navbar li a{
-    color: rgb(46, 43, 43) !important;
-}
-.navbar-nav a:hover, .navbar-nav li.active a{
-    color: #c75d06ea !important;
-    background-color: #fff !important;
-}
-.navbar-default .navbar-toggle{
-    border-style: none;
-}
-.icon-bar{
-    background-color: #fff;
-}
-
-/* TWIG */
-
-.perso_imgPlayer{
-    max-width: 70px;
-    max-height: 60px;
-    object-fit: cover;
-}

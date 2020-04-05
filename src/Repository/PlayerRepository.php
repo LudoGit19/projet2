@@ -19,18 +19,6 @@ class PlayerRepository extends ServiceEntityRepository
         parent::__construct($registry, Player::class);
     }
 
-    // public function getPlayerParNom($lname)
-    // {
-    //     return $this->createQueryBuilder('p')
-    //         ->andWhere('p.lname = :val')
-    //         ->setParameter('val', $lname)
-    //         ->orderBy('p.id', 'ASC')
-    //         ->setMaxResults(3)
-    //         ->getQuery()
-    //         ->getResult()
-    //     ;
-    // }
-
     // /**
     //  * @return Player[] Returns an array of Player objects
     //  */

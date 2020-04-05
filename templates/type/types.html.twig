@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+
+{% block monTitre %}
+Par Catégorie
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        {% for categorie in categories %}
+            <div class="col">
+                <div class="row align-items-center">
+                    <div class= "col-6 col-md-4 col-lg-2">
+                        {{ categorie.label}}
+                    </div>
+                </div>
+            </div>
+            
+        {% endfor %}
+    </div>      
+
+
+<!-- fin -->
+{% endblock %}
+
+
+
+
+
+

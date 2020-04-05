@@ -2,9 +2,13 @@
 
 namespace App\Form;
 
+use App\Entity\Type;
 use App\Entity\Player;
+use function PHPSTORM_META\type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
@@ -18,6 +22,10 @@ class PlayerType extends AbstractType
             ->add('phone')
             ->add('mail')
             ->add('imageFile', FileType::class,['required'=>false])
+            ->add('type', EntityType::class, [
+                'class' => Type::class,
+                'choice_label'=> 'label'
+            ])
         ;
     }
 

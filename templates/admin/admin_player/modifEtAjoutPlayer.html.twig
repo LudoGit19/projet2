@@ -20,7 +20,8 @@
         {% if isModification %}
             <img src="{{asset('images/player/' ~ player.image)}}" style="width: 20% ">
         {% endif %}    
-        <div>{{form_row(form.imageFile)}}</div> 
+        <div>{{form_row(form.imageFile)}}</div>
+        <div>{{form_row(form.type, {"attr" : {'class' : 'text-success '}, "label" : "Catégorie" })}}</div> 
         <div>{{form_row(form.fname, {"attr" : {'class' : 'text-success bg-primary'}, "label" : "Prénom"})}}</div>   
     </div>
     <div class="col-4">

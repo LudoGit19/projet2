@@ -8,14 +8,18 @@ Listes des joueurs
 {% endblock %}
 
 {% block body %}
+<!-- V1 début -->
+
 {# <a href="{{path("playersParNom", {"lname": "c"})}}">par Nom de famille</a> #}
-  <div class="row m-4"> 
-    {% for player in players %}            
-      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="card border-success mb-3 max-auto" style="max-width:40rem;">
-            <div class="card-header text-center">
+<!-- <div class="row m-4"> 
+ {# {% for player in players %}            
+    <div class="col-3">
+      <div class="card border-success mb-3 max-auto" style="max-width: 30rem;">
+	  
+          <div class="card-header text-center">
               <img src="{{asset('images/player/'~ player.image) }}" class="perso_imgPlayer">
             </div>
+			
             <div class="card-body">
               <h3 class="card-tittle text-center pb-2 mx-2 border-bottom border-success">{{ player.fname }}</h3>
             <p class="card-text">
@@ -36,11 +40,86 @@ Listes des joueurs
                     </tbody>
               </table>                              
             </p>
-            </div>    
+            </div>     
         </div>
       </div>              
-    {% endfor %}
+    {% endfor %}#}
+  </div> -->
+
+
+
+<!-- fin -->
+
+<!-- v2 début -->
+<!-- <div class="container">
+ 
+    <div class="card" style="width: 20rem;">
+        <div class="card-header">En-tête</div>
+
+        <div class="card-body">Corps</div>
+
+    
+      
+    </div>
+</div>
+
+
+
+<div class="container">
+  
+  <div class="card" style="width: 20rem;">
+      <img src="#" class="card-img-top" alt="photo">
+      <div class="card-body">
+          <h2 class="card-title">Titre</h2>
+          <h3 class="card-subtitle">Sous titre</h3>
+          <p class="card-text">Du texte sous le titre dans le corps de carte</p>
+          <a href="#" class="btn btn-primary">Un lien</a>
+      </div>
   </div>
+</div> -->
+
+
+        <div class="container">
+          <div class="row m-3"> 
+            {% for player in players %}   
+              <div class="card-deck">
+                  <div class="card">
+
+                    <div class="card-header text-center">
+                      <img src="{{asset('images/player/'~ player.image) }}" class="perso_imgPlayer img-fluid">
+                    </div>
+
+                      <div class="card-body">
+                        <h3 class="card-tittle text-center pb-2 mx-2 border-bottom border-dark">{{ player.fname }}</h3>
+                        <h3 class="card-tittle text-center pb-2 mx-2 border-bottom border-dark">{{ player.type.label }}</h3>
+
+                            <table class="table text-center table-hover">
+                              <tbody>                                
+                                <tr class="table-info">
+                                    <th scope="row">Nom</th>
+                                    <td>{{player.lname}}</td>                        
+                                </tr>
+                                <tr class="table">
+                                    <th scope="row">Email</th>
+                                    <td>{{player.mail}}</td>                       
+                                </tr>
+                                <tr class="table-info">
+                                    <th scope="row">Tel</th>
+                                    <td>{{player.phone}}</td>
+                              </tbody>
+                            </table>       
+                      
+                      </div>
+        
+                  </div>
+                  
+              </div>
+            {% endfor %}  
+          </div>  
+        </div>              
+
+
+<!-- fin -->
 {% endblock %}
 
 
