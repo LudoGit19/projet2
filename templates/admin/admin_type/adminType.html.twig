@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}adminType{% endblock %}
+
+
+{% block monTitre %}
+Page d'administration Catégorie
+{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('success') %}
+<div class= "container">
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert"></button> 
+        {{message}}
+    </div> 
+</div>      
+{% endfor %}
+
+<a class="btn btn-warning" href="{{ path('admin_type_creation') }}">Ajouter</a>
+
+<table class="table">
+    <tr class="table-primary">
+        <!-- <td>Photo</td>  -->
+        <td>Catégorie</td>
+        
+        <td>Actions</td>      
+    </tr>
+    {% for categorie in categories %}
+        <tr>
+            <!-- <td><img src="{#{{asset('images/player/'~ player.image) }}#}" class="perso_imgPlayer"></td> -->
+            <td><strong>{{ categorie.label }}</strong></td>
+           
+            <td>
+                <a class="btn btn-secondary" href="{{ path('admin_type_modification', {'id' : categorie.id}) }}">Modifier</a>
+                <form method="POST" style="display:inline-block" action="{{ path('admin_type_suppression', {'id' : categorie.id}) }}" onsubmit= "supCategorie()"> 
+                
+                    <input type="hidden" name="_method" value="delete"> 
+                    <input type="hidden" name="_token" value="{{csrf_token('SUP'~ categorie.id)}}"> 
+                    <input type="submit" class="btn btn-danger" value="supprimer"> 
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

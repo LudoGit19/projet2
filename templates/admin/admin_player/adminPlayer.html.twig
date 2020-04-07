@@ -4,15 +4,17 @@
 
 
 {% block monTitre %}
-Page d'administration
+Page d'administration Joueurs
 {% endblock %}
 
 {% block body %}
 {% for message in app.flashes('success') %}
-    <div class="alert alert-dismissible alert-info">
-        <button type="button" class="close" data-dismiss="alert">&times;</button> 
-        {{message}}
-    </div>    
+    <div class= "container">
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"></button> 
+            {{message}}
+        </div> 
+    </div>       
 {% endfor %}
 
 <a class="btn btn-warning" href="{{path('admin_player_creation')}}">Ajouter</a>
@@ -37,7 +39,7 @@ Page d'administration
             <td>{{ player.phone }}</td>
             <td>
                 <a class="btn btn-secondary" href="{{path('admin_player_modification', {'id' : player.id})}}">Modifier</a>
-                <form method="POST" style="display:inline-block" action="{{ path('admin_player_suppression', {'id' : player.id}) }}" onsubmit= "return('Confirmer la suppression ?')"> 
+                <form method="POST" style="display:inline-block" action="{{ path('admin_player_suppression', {'id' : player.id}) }}" onsubmit="supCategorie()"> 
                 
                     <input type="hidden" name="_method" value="delete"> 
                     <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ player.id)}}"> 

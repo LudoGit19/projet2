@@ -11,9 +11,9 @@ class TypeController extends AbstractController
     /**
      * @Route("/types", name="types")
      */
-    public function index(TypeRepository $repo)
+    public function index(TypeRepository $repository)
     {
-        $types = $repo->findAll();
+        $types = $repository->findAll();
         return $this->render('type/types.html.twig', [
             "categories" => $types
         ]);
