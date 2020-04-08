@@ -6,8 +6,17 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  
 }
+
+/* .titleBeFG{
+  font-family: 'Monofett', cursive;
+  font-size: 7em;
+  color:rgba(122, 61, 21, 0.877);
+  letter-spacing: 2px;
+  text-align: center;
+
+} */
+
 .perso_imgPlayer{
   width: 150px;
   height: 120px;
@@ -15,18 +24,10 @@
 }
 
 
-.navbar-brand{
-  font-family: 'Monofett', cursive;
-  font-size: 5em;
-  color:rgba(21, 99, 122, 0.877);
-  letter-spacing: 2px;
-  
-}
-
 body{
     font-family: 'Lato', sans-serif;
     position: relative;
-    background-color: rgb(37, 103, 112); 
+    background-color: rgb(42, 124, 134); 
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -42,19 +43,40 @@ img{
     list-style: none;
 } 
 
+.navbar {
+  width: 100%;
+ 
+}
 
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Bungee Inline', cursive;
+ 
+}
+
+.navbar a:hover {
+  background-color: #fff;
+  border-radius: 25px;
+  
+}
+
+/* 
 .navbar-brand{
   font-family: 'Monofett', cursive;
-  font-size: 5em;
+  font-size: 4em;
   color:white;
   letter-spacing: 2px;
   
-}
+} */
  #navbarDropdown {
   font-size: 20px;
   padding: 20px;
   font-family: 'Bungee Inline', cursive;
-  color: rgb(42, 124, 134);
+  color: rgb(143, 129, 1);
 }
 
 .dropdown-item{

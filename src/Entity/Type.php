@@ -28,6 +28,11 @@ class Type
      */
     private $player;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->player = new ArrayCollection();
@@ -77,6 +82,18 @@ class Type
                 $player->setType(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

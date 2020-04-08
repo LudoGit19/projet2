@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Player{% endblock %}
+
+
+{% block monTitre %}
+Listes des joueurs
+{% endblock %}
+
+{% block body %}
+
+
+
+        <div class="container">
+          <div class="row m-3"> 
+            {% for player in players %}   
+              <div class="card-deck">
+                  <div class="card">
+
+                    <div class="card-header text-center">
+                      <img src="{{asset('images/player/'~ player.image) }}" class="perso_imgPlayer img-fluid">
+                    </div>
+
+                      <div class="card-body">
+                        <h3 class="card-tittle text-center pb-2 mx-2 border-bottom border-dark">{{ player.fname }}</h3>
+                        <h3 class="card-tittle text-center pb-2 mx-2 border-bottom border-dark">{{ player.type.label }}</h3>
+
+                            <table class="table text-center table-hover">
+                              <tbody>                                
+                                <tr class="table-info">
+                                    <th scope="row">Nom</th>
+                                    <td>{{player.lname}}</td>                        
+                                </tr>
+                                <tr class="table">
+                                    <th scope="row">Email</th>
+                                    <td>{{player.mail}}</td>                       
+                                </tr>
+                                <tr class="table-info">
+                                    <th scope="row">Tel</th>
+                                    <td>{{player.phone}}</td>
+                              </tbody>
+                            </table>       
+                      
+                      </div>
+        
+                  </div>
+                  
+              </div>
+            {% endfor %}  
+          </div>  
+        </div>              
+
+
+<!-- fin -->
+{% endblock %}
+
+
+
+
+
+
