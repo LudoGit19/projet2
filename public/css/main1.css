@@ -27,7 +27,7 @@
 body{
     font-family: 'Lato', sans-serif;
     position: relative;
-    background-color: rgb(42, 124, 134); 
+    background-color: rgb(209, 212, 212); 
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -76,7 +76,7 @@ img{
   font-size: 20px;
   padding: 20px;
   font-family: 'Bungee Inline', cursive;
-  color: rgb(143, 129, 1);
+  color: rgb(27, 132, 230);
 }
 
 .dropdown-item{
