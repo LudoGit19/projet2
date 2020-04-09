@@ -19,12 +19,12 @@ class PlayerController extends AbstractController
     }
 
     /**
-     * @Route("/welcome", name="welcome")
+     * @Route("/menu", name="menu")
      */
     public function menu()
     {
        
-        return $this->render('base.html.twig');
+        return $this->render('home/menu.html.twig');
     }
 
 

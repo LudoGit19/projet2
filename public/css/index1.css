@@ -5,6 +5,8 @@ body{
     
 }
 
+/* menu circulaire simple */
+
 nav{
     width:350px;
     height:350px;
@@ -95,7 +97,92 @@ nav > ul > li:nth-child(5){
     width: 105px;
 } */
 
+/* menu circulaire animate */
 
+.ana{
+transform: rotate(45deg);    
+    margin: 200px auto;
+    /* position: relative; */
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    /* border: 2px solid #fff; */
+    /* sur la photo */
+    color: rgb(42, 124, 134);
+    font-family: 'Cabin Sketch', cursive;
+    /* font-size: 100px;  */
+    letter-spacing: 4px;   
+    /* text-shadow: 2px 2px 2px  #2c1249; */
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ 
+    cursor: none;
+}
+
+input[type="checkbox"]{
+z-index:2;
+    -webkit-appearance: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    background: #000;
+    border-radius: 100%;
+    outline: none;
+    transform: translate(-50%, -50%) rotate(-45deg);  
+}
+
+input[type="checkbox"]:before{
+    cursor: pointer;
+    font-family: 'Bungee Inline', cursive;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: 'BeFG';
+    color: #fff;
+    background:  #2c1249;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 100px;
+}
+.menu1, .menu2, .menu3, .menu4{   
+    width: 120px;
+    height: 120px;
+    background: rgb(29, 104, 117);
+    border: 2px solid #fff;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: linear 1s;
+}
+input[type="checkbox"]:checked ~ .menu1{
+    left:0;
+    top:50%;
+}
+
+input[type="checkbox"]:checked ~ .menu2{
+    top:0;
+    left:50%;
+}
+
+input[type="checkbox"]:checked ~ .menu3{
+    top:50%;
+    left:100%;
+}
+
+input[type="checkbox"]:checked ~ .menu4{
+    top:100%;
+    left:50%;
+}
 
 
 /* Overlay avec hover sur une image en HTML/CSS */
