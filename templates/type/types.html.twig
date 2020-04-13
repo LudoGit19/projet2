@@ -8,18 +8,42 @@ Par Catégorie
 {% endblock %}
 
 {% block body %}
-    <div class="row">
+{# <div class="container">
+       {% for categorie in categories %}
+    <table class="table">
+        
+      <thead>
+        <tr>
+          <th>{{ categorie.label}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="{{asset('images/type/' ~ categorie.image)}}" class="perso_imgCategorie"></td>       
+        </tr>
+      </tbody>
+    </table>
+  </div> #}
+
+
+
+    {# <div class="row">
         {% for categorie in categories %}
             <div class="col">
                 <div class="row align-items-center">
                     <div class= "col-6 col-md-4 col-lg-2">
-                        {{ categorie.label}}
+                        <div class="col">
+                            
+                        </div>
+                        <div class="col">                        
+                        
+                        </div>   
                     </div>
-                </div>
+                </div>   
             </div>
             
         {% endfor %}
-    </div>      
+    </div>       #}
 
 
 <!-- fin -->

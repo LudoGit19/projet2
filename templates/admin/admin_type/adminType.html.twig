@@ -21,14 +21,13 @@ Page d'administration Catégorie
 
 <table class="table">
     <tr class="table-primary">
-        <!-- <td>Photo</td>  -->
-        <td>Catégorie</td>
-        
+        <td>Photo</td> 
+        <td>Catégorie</td>        
         <td>Actions</td>      
     </tr>
     {% for categorie in categories %}
         <tr>
-            <!-- <td><img src="{#{{asset('images/player/'~ player.image) }}#}" class="perso_imgPlayer"></td> -->
+            <td><img src="{{asset('images/type/'~ categorie.image) }}" class="perso_imgCategorie"</td>
             <td><strong>{{ categorie.label }}</strong></td>
            
             <td>

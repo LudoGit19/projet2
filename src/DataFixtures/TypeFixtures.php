@@ -31,25 +31,25 @@ class TypeFixtures extends Fixture
         $t4->setImage("team1.jpg");
         $manager->persist($t4);
 
-        $playerRepository = $manager->getRepository(Player::class);
-        $p1 = $playerRepository->findOneBy(["lname"=>"Menahes"]);
-        $p1->setType($t3);
-        $manager->persist($p1);
+        // $playerRepository = $manager->getRepository(Player::class);
+        // $p1 = $playerRepository->findOneBy(["lname"=>"Menahes"]);
+        // $p1->setType($t3);
+        // $manager->persist($p1);
 
-        $playerRepository = $manager->getRepository(Player::class);
-        $p2 = $playerRepository->findOneBy(["lname"=>"Lepetit"]);
-        $p2->setType($t3);
-        $manager->persist($p2);
+        // $playerRepository = $manager->getRepository(Player::class);
+        // $p2 = $playerRepository->findOneBy(["lname"=>"LepetitU13"]);
+        // $p2->setType($t4);
+        // $manager->persist($p2);
 
-        $playerRepository = $manager->getRepository(Player::class);
-        $p3 = $playerRepository->findOneBy(["lname"=>"testor"]);
-        $p3->setType($t2);
-        $manager->persist($p3);
+        // $playerRepository = $manager->getRepository(Player::class);
+        // $p3 = $playerRepository->findOneBy(["lname"=>"testorU7"]);
+        // $p3->setType($t1);
+        // $manager->persist($p3);
 
-        $playerRepository = $manager->getRepository(Player::class);
-        $p3 = $playerRepository->findOneBy(["lname"=>"cochain"]);
-        $p3->setType($t2);
-        $manager->persist($p3);
+        // $playerRepository = $manager->getRepository(Player::class);
+        // $p4 = $playerRepository->findOneBy(["lname"=>"cochainU9"]);
+        // $p4->setType($t2);
+        // $manager->persist($p4);
 
 
         $manager->flush();

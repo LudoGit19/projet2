@@ -5,7 +5,7 @@
         <title>{% block title %}BeForGame.com{% endblock %}</title>
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{asset('css/main1.css')}}">
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <link href="https://fonts.googleapis.com/css?family=Wallpoet&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Monofett|Monoton&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Monofett|Monoton&display=swap" rel="stylesheet">
@@ -57,16 +57,25 @@
                     </div>      
                   </li>
                       <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-                    
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Inscription
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{path("registration")}}"></i>Inscription</a> 
+                      <div class="dropdown-divider"></div>                      
+                    </div>
+                  </li>    
+              
                 
                   <!-- <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
                   </li> -->
               </ul>
-          <form class="form-inline my-2 my-lg-0">
+          {# <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          </form> #}
         </div>
       </nav> 
      
