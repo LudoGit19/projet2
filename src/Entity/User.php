@@ -3,11 +3,18 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(
+ * fields={"username"},
+ * message="user déjà utilisé"
+ * )
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -18,15 +25,20 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=5,max=10,minMessage="5 carcatères minimum", maxMessage="10 carcatères maximum")
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=5,max=10,minMessage="5 carcatères minimum", maxMessage="10 carcatères maximum") 
      */
     private $password;
 
-
+     /**
+     * @Assert\Length(min=5,max=10,minMessage="5 carcatères minimum", maxMessage="10 carcatères maximum")
+     * @Assert\EqualTo(propertyPath="password",message="Les mots de passe que vous avez tapés sont différents.")
+     */
     private $checkPassword;
 
     
@@ -77,5 +89,21 @@ class User
         $this->checkPassword = $checkPassword;
 
         return $this;
+    }
+
+    public function eraseCredentials()
+    {
+        
+    }
+
+    public function getSalt()
+    {
+        
+    }
+
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+
     }
 }
