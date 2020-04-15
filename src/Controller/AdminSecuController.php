@@ -26,7 +26,7 @@ class AdminSecuController extends AbstractController
             $user->setPassword($passwordCrypte);
             $entityManager->persist($user);
             $entityManager->flush();
-            return $this->redirectToRoute('menu');
+            return $this->redirectToRoute('players');
         }
         return $this->render('admin_secu/registration.html.twig', [
             "form" => $form->createView()
@@ -39,4 +39,11 @@ class AdminSecuController extends AbstractController
     public function login(){
         return $this-> render("admin_secu/login.html.twig");
     }
+/**
+     * @Route("/deconnexion", name="deconnexion")
+     */
+    public function deconnexion(){
+       
+    }
+
 }
