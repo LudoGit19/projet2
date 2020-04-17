@@ -17,7 +17,7 @@
     </head>
     <body>
 
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2c1249; border-radius: 0px 0px 45px 0px;">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1b2242; border-radius: 0px 0px 45px 0px;">
         <!-- Brand -->
         <a class="navbar-brand" style="font-family: 'Monofett', cursive; color: rgb(42, 124, 134); font-size: 4em; letter-spacing: 3px;">BeForGame</a>
         <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,50 +27,58 @@
         <a class="active" href="{{path("home")}}"><i class="fa fa-fw fa-home"></i> Home</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                  <!-- <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li> -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Ma team
+          <ul class="navbar-nav mr-auto">
+              <!-- <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ma team
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{path("players")}}">Effectifs</a>
+                  <div class="dropdown-divider"></div>
+                  {% if is_granted('ROLE_ADMIN') %}
+                  <a class="dropdown-item" href="{{path("admin_player")}}">administration</a>
+                  {% endif %} 
+                </div>
+              </li>
+                  <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+              <li class="nav-item dropdown">    
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Convocations
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{path("players")}}">Effectifs</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="{{path("admin_player")}}">administration</a>
-                    </div>
-                  </li>
-                      <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-                  <li class="nav-item dropdown">    
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Convocations
-                        </a>
-                    
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{path("types")}}">Catégories</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="{{path("admin_types")}}">administration</a>
-                    </div>      
-                  </li>
-                      <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Inscription
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{path("registration")}}"></i>Inscription</a> 
-                      <div class="dropdown-divider"></div>                      
-                    </div>
-                  </li>    
+                
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{path("types")}}">Catégories</a>
+                  <div class="dropdown-divider"></div>
+                  {% if is_granted('ROLE_ADMIN') %}
+                  <a class="dropdown-item" href="{{path("admin_types")}}">administration</a>
+                  {% endif %} 
+                </div>      
+              </li>
+                  <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+              <li class="nav-item dropdown">
+                {% if not app.user %}
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mon Compte
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item-login" href="{{path("registration")}}"></i>Inscription</a> 
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item-login" href="{{path("connexion")}}"></i>Login</a>
+                  <div class="dropdown-divider"></div>
+                  {% else %}
+                  <a class="dropdown-item-logout" href="{{path("deconnexion")}}"></i>Logout</a>
+                  {% endif %}                          
+                </div>
+              </li>    
               
                 
-                  <!-- <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                  </li> -->
+                
               </ul>
           {# <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

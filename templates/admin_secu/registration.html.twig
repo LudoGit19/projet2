@@ -8,15 +8,34 @@
 {% endblock %} 
 
 {% block body %}
- {{ form_start(form) }}
-    {{form_row(form.username,{
-        "attr" : {
-            "placeholder": "saisir login"},
-        "label": "Login"
-    })}}
-        {{ form_widget(form) }}
-        <input type="submit" class="btn btn-primary" value="Valider">
-    {{ form_end(form) }}
+    <div id="main-wrap" class="container-fluid">
+        <div class="section-full">
+            <div id="admin-form" class="container">
+               
+                    {{ form_start(form) }}
+                        <fieldset>
+                            <!-- <legend>Identifiants</legend> -->
+                            <div class="col-lg">  
+                            
+                                {{form_row(form.username,{
+                                    "attr": {"placeholder" : "Saisir votre Login",
+                                    },
+                                    "label": "Votre Login"
+                                })}}
+                                
+                                {{ form_widget(form )}}
+                            
+                            </div>
+                        
+
+                            <input class="m-top-30 btn btn-warning" type="submit" value="S'enregistrer" />
+                        </fieldset>
+
+                    {{ form_end(form) }}
+               
+            </div>
+        </div>
+    </div>    
 {% endblock %}
 
 
