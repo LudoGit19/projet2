@@ -16,6 +16,15 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+      {# <div class=" overlay-image ">
+        
+        <a href="{{path("home")}}">
+        <img class="image" src="{{ asset("images/logo/technoCoffee.jpeg") }}">  
+        <div class="title">Be.ForGame</div>
+        <br>
+        <div class="subTitle">Au service des clubs</div> 
+         </a> 
+      </div> #}
 
         
       <!-- <div class=" overlay-image ">
@@ -27,9 +36,17 @@
         <div class="subTitle">Au service des clubs</div> 
          </a> 
       </div> -->
-  
+  <div>
     <div class=" overlay-image ">  
-        <img class="image" src="{{ asset("images/logo/technoCoffee.jpeg") }}"> 
+      <a href="{{path("home")}}">
+        <div class="title">Be.ForGame</div>
+        <div class="subTitle">Au service des clubs</div> 
+        <img class="image" src="{{ asset("images/logo/technoCoffee.jpeg") }}">  
+  
+       
+         </a> 
+
+        {# <img class="image" src="{{ asset("images/logo/technoCoffee.jpeg") }}">  #}
       <div class="ana">
           <input type="checkbox">
             <div class="menu1"><a href="{{path("players")}}"><svg class="bi bi-person-fill"  viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +67,7 @@
               </svg></a></div>
       </div>
     </div>  
-
+</div>
       <!-- <nav>
         <ul>
             <li><a href="#"><svg class="bi bi-person-fill"  viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -34,7 +34,7 @@
 body{
     font-family: 'Lato', sans-serif;
     position: relative;
-    background-color: rgb(209, 212, 212); 
+    background-color: rgb(255, 255, 255); 
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -66,8 +66,9 @@ img{
 }
 
 .navbar a:hover {
-  background-color: #fff;
-  border-radius: 25px;
+  background-color: #07afcc;
+
+  border-radius: 5px;
   
 }
 
@@ -83,14 +84,18 @@ img{
   font-size: 20px;
   padding: 20px;
   font-family: 'Bungee Inline', cursive;
-  color: rgb(27, 132, 230);
+  color: #fff;
 }
 
-.dropdown-item{
-  color: rgb(42, 124, 134);
+.dropdown-item-login{
+  color: #292d50;
+}
+
+.dropdown-item-logout{
+  color: #aa3632;
 }
 
 .dropdown-divider{
-  color: rgb(42, 124, 134);
+  color: #292d50;
 } 
 

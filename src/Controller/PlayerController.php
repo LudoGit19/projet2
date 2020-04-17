@@ -9,17 +9,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PlayerController extends AbstractController
 {
 
-    /**
-     * @Route("/", name="home")
-     */
-    public function index()
-    {
+    // /**
+    //  * @Route("/", name="home")
+    //  */
+    // public function index()
+    // {
        
-        return $this->render('home/index.html.twig');
-    }
+    //     return $this->render('home/index.html.twig');
+    // }
 
     /**
-     * @Route("/menu", name="menu")
+     * @Route("/", name="home")
      */
     public function menu()
     {
